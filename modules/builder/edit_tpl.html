@@ -1,0 +1,472 @@
+<a href="/builder"><i class="glyphicon glyphicon-chevron-up"></i> назад</a>
+
+<h2>Редактор сайта</h2>
+
+<!--<form class="form-horizontal"> -->
+<div class="form-horizontal">
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Параметры
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse {in0}" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+	  
+	  
+	<input type="hidden" id="hidSiteId" value="{siteId}">
+	<div class="form-group">
+		<label for="edtURL" class="col-sm-2 control-label">URL http://</label>
+		<div class="col-sm-10">
+		<input type="text" class="form-control" id="edtURL" value="{url}" readonly>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label for="edtName" class="col-sm-2 control-label">Название<br><small></small></label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="edtName" value="{name}">
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label for="edtAbout" class="col-sm-2 control-label">Описание<br><small></small></label>
+		<div class="col-sm-10">
+			<textarea class="form-control" id="edtAbout">{about}</textarea>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label for="edtAbout" class="col-sm-2 control-label">Заголовок<br><small></small></label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="edtCaption" value="{caption}">
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label for="edtDesign" class="col-sm-2 control-label">Дизайн</label>
+		<div class="col-sm-10">
+			<input type="radio" name="edtDesign" id="edtDesign" value="1" checked> Bootstrap &nbsp; &nbsp; &nbsp;
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="edtTheme" class="col-sm-2 control-label">Тема</label>
+		<div class="col-sm-2">
+			<input type="radio" name="edtTheme" id="edtTheme" value="0" checked> Default <img width="150" height="90">
+		</div>
+		<div class="col-sm-2">
+			<input type="radio" name="edtTheme" id="edtTheme" value="1" > Cerulean <img width="150" height="90" src="https://bootswatch.com/cerulean/thumbnail.png">
+		</div>
+		<div class="col-sm-2">
+			<input type="radio" name="edtTheme" id="edtTheme" value="2" > Cyborg <img width="150" height="90" src="https://bootswatch.com/cyborg/thumbnail.png">
+		</div>
+		<div class="col-sm-2">
+			<input type="radio" name="edtTheme" id="edtTheme" value="3" > Darkly <img width="150" height="90" src="https://bootswatch.com/darkly/thumbnail.png">
+		</div>
+		<div class="col-sm-2">
+			<input type="radio" name="edtTheme" id="edtTheme" value="4" > Flatly <img width="150" height="90" src="https://bootswatch.com/flatly/thumbnail.png">
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label for="edtDesign" class="col-sm-2 control-label"></label>
+		<div class="col-sm-2">
+			<input type="radio" name="edtTheme" id="edtTheme"> Journal <img width="150" height="90" src="https://bootswatch.com/journal/thumbnail.png">
+		</div>
+		<div class="col-sm-2">
+			<input type="radio" name="edtTheme" id="edtTheme"> Lumen <img width="150" height="90" src="https://bootswatch.com/lumen/thumbnail.png">
+		</div>
+		<div class="col-sm-2">
+			<input type="radio" name="edtTheme" id="edtTheme"> Paper <img width="150" height="90" src="https://bootswatch.com/paper/thumbnail.png">
+		</div>
+		<div class="col-sm-2">
+			<input type="radio" name="edtTheme" id="edtTheme"> Readable <img width="150" height="90" src="https://bootswatch.com/readable/thumbnail.png">
+		</div>
+		<div class="col-sm-2">
+			<input type="radio" name="edtTheme" id="edtTheme"> Sandstone <img width="150" height="90" src="https://bootswatch.com/sandstone/thumbnail.png">
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label for="edtDesign" class="col-sm-2 control-label"></label>
+		<div class="col-sm-2">
+			<input type="radio" name="edtTheme" id="edtTheme"> Simplex <img width="150" height="90" src="https://bootswatch.com/simplex/thumbnail.png">
+		</div>
+		<div class="col-sm-2">
+			<input type="radio" name="edtTheme" id="edtTheme"> Slate <img width="150" height="90" src="https://bootswatch.com/slate/thumbnail.png">
+		</div>
+		<div class="col-sm-2">
+			<input type="radio" name="edtTheme" id="edtTheme"> Spacelab <img width="150" height="90" src="https://bootswatch.com/spacelab/thumbnail.png">
+		</div>
+		<div class="col-sm-2">
+			<input type="radio" name="edtTheme" id="edtTheme"> Superhero <img width="150" height="90" src="https://bootswatch.com/superhero/thumbnail.png">
+		</div>
+		<div class="col-sm-2">
+			<input type="radio" name="edtTheme" id="edtTheme"> United <img width="150" height="90" src="https://bootswatch.com/united/thumbnail.png">
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label for="edtDesign" class="col-sm-2 control-label"></label>
+		<div class="col-sm-2">
+			<input type="radio" name="edtTheme" id="edtTheme"> Yeti <img width="150" height="90" src="https://bootswatch.com/yeti/thumbnail.png">
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label for="edtMaket" class="col-sm-2 control-label">Макет</label>
+		<div class="col-sm-10">
+			<input type="radio" id="edtMaket" value="1" checked> 2 колонки (sidebar слева) &nbsp; &nbsp; &nbsp;
+			<input type="radio" id="edtMaket" value="2"> 2 колонки (sidebar справа) &nbsp; &nbsp; &nbsp;
+			<input type="radio" id="edtMaket" value="3"> 3 колонки &nbsp; &nbsp; &nbsp;
+			<input type="radio" id="edtMaket" value="0"> Нет колонок (sidebar слева)
+		</div>
+	</div>
+	  
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button id="btnAccept" class="btn btn-default">Применить</button>
+		</div>
+	</div>
+	  
+	  
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Страницы
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse {in1}" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+
+
+	<div class="form-group">
+		<label for="edtMaket" class="col-sm-2 control-label">Страницы</label>
+		<div class="col-sm-10">
+			<table id="tabPages" class="table table-striped table-bordered">
+				<thead>
+				<tr><th>№</th><th>URL</th><th>Модуль</th><th>Название</th><th>Описание</th><th>Ключевые слова</th></tr>
+				</thead>
+				{pages}
+			</table>
+			<div class="form-inline">
+				<input type="button" class="form-control btn-primary" id="btnAdd" value="Добавить" data-toggle="modal" data-target="#modAddPage">
+				<input type="button" class="form-control" id="btnEdit" value="Параметры" data-toggle="modal" data-target="#modEditPage" data-table="tabPages" disabled>
+				<input type="button" class="form-control" id="btnEditContent" value="Контент" data-table="tabPages" disabled>
+				<input type="button" class="form-control btn-danger" id="btnDelete" value="Удалить" data-toggle="modal" data-target="#modDeletePage" data-table="tabPages" disabled>
+				&nbsp;&nbsp;&nbsp;
+				<button id="btnBottom" class="btn btn-default" type="submit" disabled><i class="glyphicon glyphicon-triangle-bottom"></i></button>
+				<button id="btnTop" class="btn btn-default" type="submit" disabled><i class="glyphicon glyphicon-triangle-top"></i></button>
+			</div>
+			<br>
+		</div>
+	</div>
+
+	  
+
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default" style="visibility:hidden">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Виджеты (пока не работают)
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse {in2}" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+
+
+	<div class="form-group">
+		<label for="edtMaket" class="col-sm-2 control-label">Виджеты</label>
+		<div class="col-sm-10">
+			<table id="tabWidgets" class="table table-striped table-bordered">
+				<tr><th>№</th><th>Название</th><th>Sidebar</th></tr>
+				{widgets}
+			</table>
+			<div class="form-inline">
+				<input type="button" class="form-control btn-primary" id="btnAddWidget" value="Добавить" disabled>
+				<input type="button" class="form-control" id="btnEditWidget" value="Редактировать" disabled>
+				<input type="button" class="form-control btn-danger" id="btnDeleteWidget" value="Удалить" disabled>
+			</div>
+			<br>
+		</div>
+	</div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+	
+	
+	
+<!--</form>-->
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modAddPage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Добавить страницу</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="moduleId" class="col-sm-3 control-label">Модуль страницы</label>
+						<div class="col-sm-9">
+							<select id="moduleId" name="moduleId" class="form-control">
+								<option></option>
+								{modules}
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtURLpage" class="col-sm-3 control-label">URL страницы /</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtURLpage">
+						</div>
+					</div>
+<!--
+					<div class="form-group">
+						<label for="edtMainPage" class="col-sm-3 control-label"></label>
+						<div class="col-sm-9">
+							<input type="checkbox" id="cbxMainPage"> Главная страница
+						</div>
+					</div>
+-->
+					<div class="form-group">
+						<label for="edtTitle" class="col-sm-3 control-label">Название<br><small>(title)</small></label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtTitle">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtDescription" class="col-sm-3 control-label">Описание<br><small>(description)</small></label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtDescription">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtKeywords2" class="col-sm-3 control-label">Ключевые слова<br><small>(keywords)</small></label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtKeywords2">
+						</div>
+					</div>
+
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="btnAddPage" class="btn btn-primary" data-dismiss="modal">Добавить</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modEditPage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<input type="hidden" id="hidPageIndex" value="">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Правка страницы</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="edtEditURLpage" class="col-sm-3 control-label">URL страницы</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtEditURLpage">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="selEditModuleId" class="col-sm-3 control-label">Модуль страницы</label>
+						<div class="col-sm-9">
+							<select id="selEditModuleId" name="selEditModuleId" class="form-control">
+								<option></option>
+								{modules}
+							</select>
+						</div>
+					</div>
+<!--
+					<div class="form-group">
+						<label for="cbxEditMainPage" class="col-sm-3 control-label"></label>
+						<div class="col-sm-9">
+							<input type="checkbox" id="cbxEditMainPage"> Главная страница
+						</div>
+					</div>
+-->
+					<div class="form-group">
+						<label for="edtEditTitlePage" class="col-sm-3 control-label">Название<br><small>(title)</small></label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtEditTitlePage">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtEditDescriptionPage" class="col-sm-3 control-label">Описание<br><small>(description)</small></label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtEditDescriptionPage">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtEditKeywordsPage" class="col-sm-3 control-label">Ключевые слова<br><small>(keywords)</small></label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtEditKeywordsPage">
+						</div>
+					</div>
+<!--
+					<div class="form-group">
+						<label for="edtContent" class="col-sm-3 control-label">Контент</label>
+						<div class="col-sm-9">
+							<textarea id="sitev_ru_summernote" class="form-control"></textarea>
+						</div>
+					</div>
+-->
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="btnEditPage" class="btn btn-primary" data-dismiss="modal">Применить</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modDeletePage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Удаление страницы</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<input type="hidden" id="hidRemovePageId">
+					<input type="hidden" id="hidRemoveIndex">
+					<div class="form-group">
+						<label for="edtDeleteURLpage" class="col-sm-3 control-label">URL страницы</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtDeleteURLpage" readonly>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="selDeleteModuleId" class="col-sm-3 control-label">Модуль страницы</label>
+						<div class="col-sm-9">
+							<select id="selDeleteModuleId" name="selDeleteModuleId" class="form-control">
+								<option></option>
+								{modules}
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="edtDeleteTitlePage" class="col-sm-3 control-label">Название страницы</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtDeleteTitlePage" readonly>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtDeleteDescriptionPage" class="col-sm-3 control-label">Описание<br><small>(description)</small></label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtDeleteDescriptionPage">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+				<button type="button" id="btnDeletePage" class="btn btn-danger" data-dismiss="modal">Удалить</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Widgets -->
+
+<div class="modal fade" id="modAddWidget" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Добавить виджет</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="edtURLpage" class="col-sm-3 control-label">URL страницы</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtURLpage">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtURLpage" class="col-sm-3 control-label">Модуль страницы</label>
+						<div class="col-sm-9">
+							<select id="moduleId2" name="moduleId2" class="form-control">
+								<option></option>
+								{modules}
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtMainPage" class="col-sm-3 control-label"></label>
+						<div class="col-sm-9">
+							<input type="checkbox" id="cbxMainPage"> Главная страница
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtTitle" class="col-sm-3 control-label">Название<br><small>(title)</small></label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtTitle">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtDescription" class="col-sm-3 control-label">Описание<br><small>(description)</small></label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtDescription">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtKeywords2" class="col-sm-3 control-label">Ключевые слова<br><small>(keywords)</small></label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtKeywords2">
+						</div>
+					</div>
+
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="btnAddPage" class="btn btn-primary" data-dismiss="modal">Добавить</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+			</div>
+		</div>
+	</div>
+</div>

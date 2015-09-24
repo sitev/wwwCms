@@ -1,0 +1,100 @@
+<h2>Конструктор сайтов</h2>
+
+<table id="tabSites" class="table table-striped table-bordered table-hover">
+<caption class="text-right">Ваши сайты</caption>
+<thead>
+<tr><th>№</th><th>URL</th><th>Имя</th><th>Описание</th></tr>
+</thead>
+{rows}
+</table>
+
+<div class="form-inline">
+	<input type="button" id="btnCreateSite" class="form-control btn-primary" value="Создать" data-toggle="modal" data-target="#modCreateSite">
+	<input type="button" id="btnEditSite" class="form-control" value="Редактирование" data-table="tabSites" disabled>
+	<input type="button" id="btnDeleteSite" class="form-control btn-danger" value="Удалить" data-toggle="modal" data-target="#modDeleteSite" data-table="tabSites" disabled>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modCreateSite" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Создать сайт</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="edtURL" class="col-sm-3 control-label">URL http://</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="edtURL">
+						</div>
+						<label for="edtURL" class="control-label">.place.sitev.ru</label>
+					</div>
+
+					<div class="form-group">
+						<label for="edtName" class="col-sm-3 control-label">Название</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtName">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtAbout" class="col-sm-3 control-label">Описание</label>
+						<div class="col-sm-9">
+							<textarea class="form-control" id="edtAbout"></textarea>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="btnCreate" class="btn btn-primary" data-dismiss="modal">Создать</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modDeleteSite" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Удаление сайта</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<input type="hidden" id="hidDeleteSiteTable">
+					<input type="hidden" id="hidDeleteSiteId">
+					<input type="hidden" id="hidDeleteSiteIndex">
+					<div class="form-group">
+						<label for="edtDeleteURL" class="col-sm-3 control-label">URL http://</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtDeleteURL" readonly>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtDeleteName" class="col-sm-3 control-label">Название</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtDeleteName" readonly>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtDeleteAbout" class="col-sm-3 control-label">Описание</label>
+						<div class="col-sm-9">
+							<textarea class="form-control" id="edtDeleteAbout" readonly></textarea>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+				<button type="button" id="btnDeleteSiteFinish" class="btn btn-danger" data-dismiss="modal">Удалить</button>
+			</div>
+		</div>
+	</div>
+</div>
+

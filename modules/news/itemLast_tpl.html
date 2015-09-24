@@ -1,0 +1,17 @@
+<h2>{name}</h2>
+<p>{about}
+</p>
+<p class="lead"><a class="btn btn-default" href="/{page}/{num}" role="button">далее</a></p>
+<p class="pull-right">{tags}</p>
+<ul class="list-inline">
+<li><a href="#">{dt}</a></li><li><a href="/{page}/{num}#comments"><i class="glyphicon glyphicon-comment"></i> {commentCount} Комментарии</a></li>
+<li><form class="form-inline">
+		<div class="form-group">
+			<a href="javascript:sitev_ru_ChangeVisibility('sitev_ru_PostItem{itemId}')">
+				<i class="glyphicon glyphicon-share"></i> Поделиться
+			</a>
+			<input type="text" class="form-control not-visible" id="sitev_ru_PostItem{itemId}" value="{host}/post/{num}">
+		</div>
+	</form>
+</li>
+</ul>
