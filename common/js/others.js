@@ -33,35 +33,7 @@ $(document).ready(function() {
 	$("#sitev_ru_sendPostToModeration").click(function() {
 		var name = $("#sitev_ru_postName").val();
 		alert(name);
-		var content = $("#sitev_ru_froala_edit").val();
-		alert(content);
-		
-		if (content.length >= 10) {
-			$.ajax({
-				global: false,
-				type: "POST",
-				url: "/post/sendPost?cmd=ajax",
-				cache: false,
-				data: ({content: content, name: name}),
-				dataType: "xml", 
-				success: function(xml) {
-					$(xml).find("note").each(function() {
-						var result = $(this).find("result").text();
-						if (result == "1") {
-							location.reload(true);
-						}
-						else alert("error");
-					});
-				}
-			});
-		}
-		else alert("Пост слишком короткий...");
-	});
-	
-	$("#sitev_ru_sendPostToModeration").click(function() {
-		var name = $("#sitev_ru_postName").val();
-		alert(name);
-		var content = $("#sitev_ru_froala_edit").val();
+		var content = $("#sitev_ru_summernote").val();
 		alert(content);
 		
 		if (content.length >= 10) {
