@@ -7,6 +7,31 @@ function sitev_ru_ChangeVisibility(elemId) {
 	}
 }
 
+function sitev_ru_sendToSite(pref) {
+	var name = $("#sitev_ru_postName").val();
+	alert(name);
+	var content = $("#sitev_ru_summernote").val();
+	alert(content);
+	
+	$.ajax({
+		global: false,
+		type: "POST",
+		url: "/" + pref + "/sendPost?cmd=ajax",
+		cache: false,
+		data: ({content: content, name: name}),
+		dataType: "xml", 
+		success: function(xml) {
+			$(xml).find("note").each(function() {
+				var result = $(this).find("result").text();
+				if (result == "1") {
+					location.assign("/");
+				}
+				else alert("error");
+			});
+		}
+	});
+}	
+
 $(document).ready(function() {
 	//$("#sitev_ru_Comment").elastic();
 	$("#sitev_ru_sendComment").click(function() {
@@ -58,4 +83,14 @@ $(document).ready(function() {
 		else alert("Пост слишком короткий...");
 	});
 	
+	$("#sitev_ru_sendPostToSite").click(function() {
+		sitev_ru_sendToSite("post");
+	});
+	
+	$("#sitev_ru_sendNewsToSite").click(function() {
+		alert(1);
+		sitev_ru_sendToSite("news");
+	});
+	
 });
+
