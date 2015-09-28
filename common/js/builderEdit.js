@@ -141,26 +141,47 @@ $(document).ready(function() {
 	
 	$("#btnAccept").click(function() {
 		var siteId = $("#hidSiteId").val();
-		var url = $("#edtURL").val();
 		var name = $("#edtName").val();
 		var about = $("#edtAbout").val();
 		var caption = $("#edtCaption").val();
-		var design = $("[name=edtDesign]:checked").val();
-		var theme = $("[name=edtTheme]:checked").val();
-		var maket = $("[name=edtMaket]:checked").val();
 		
 		$.ajax({
 			global: false,
 			type: "POST",
 			url: "/builder/accept?cmd=ajax",
 			cache: false,
-			data: ({siteId: siteId, url: url, name: name, about: about, caption: caption, design: design, theme: theme, maket: maket}),
+			data: ({siteId: siteId, name: name, about: about, caption: caption}),
 			dataType: "xml", 
 			success: function(xml) {
 				$(xml).find("note").each(function() {
 					var result = $(this).find("result").text();
 					if (result == "1") {
 						location.reload();
+					}
+				});
+			}
+		});
+	});
+	
+	$("#btnAcceptDesign").click(function() {
+		var siteId = $("#hidSiteId").val();
+		var design = $("[name=edtDesign]:checked").val();
+		var theme = $("[name=edtTheme]:checked").val();
+		var layout = $("[name=layout]:checked").val();
+		
+		$.ajax({
+			global: false,
+			type: "POST",
+			url: "/builder/acceptDesign?cmd=ajax",
+			cache: false,
+			data: ({siteId: siteId, design: design, theme: theme, layout: layout}),
+			dataType: "xml", 
+			success: function(xml) {
+				$(xml).find("note").each(function() {
+					var result = $(this).find("result").text();
+					if (result == "1") {
+						location.reload();
+						alert(111);
 					}
 				});
 			}
