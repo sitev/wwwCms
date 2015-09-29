@@ -519,6 +519,32 @@ alert(text);
 			}
 		});
 	});
+	
+	$("#btnAddItem").click(function() {
+		var siteId = $("#hidSiteId").val();
+		var name = $("#edtName").val();
+		var url = $("#edtURL").val();
+		$.ajax({
+			global: false,
+			type: "POST",
+			url: "/builder/addMenuItem?cmd=ajax",
+			cache: false,
+			data: ({siteId: siteId, name: name, url: url}),
+			dataType: "xml", 
+			success: function(xml) {
+				alert(1);
+				$(xml).find("note").each(function() {
+					alert(2);
+					var result = $(this).find("result").text();
+					if (result == "1") {
+						alert(3);
+						window.location.assign("/builder/edit/" + siteId + "/menu");
+					}
+				});
+			}
+		});
+		
+	});
 
 	$('table tbody tr').on('click', function() {
 		$('table tr').removeClass('info');

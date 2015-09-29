@@ -10,7 +10,6 @@
 		<meta name="description" content="{description}" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="{theme}bootstrap.min.css" rel="stylesheet">
-		<!-- <link href="https://bootswatch.com/cosmo/bootstrap.min.css" rel="stylesheet"> -->
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -78,15 +77,16 @@
 </div>
 
 
-<div class="container-fluid">
+<div class="container-fluid" style="max-width: 1200px">
   
   <!--left-->
+  <!--
   <div class="col-sm-2">
 		{sidebar}
   </div><!--/left-->
   
   <!--center-->
-  <div class="col-sm-8">
+  <div class="col-sm-9">
     <div class="row">
       <div class="col-xs-12">
 	  
@@ -99,11 +99,12 @@
   </div><!--/center-->
 
   <!--right-->
-  <div class="col-sm-2">
+  <div class="col-sm-3">
 		{sidebar2}
   </div><!--/right-->
 <!--  <hr> -->
 </div><!--/container-fluid-->
+
 
 	<footer class="footer">
       <div class="container">

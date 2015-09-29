@@ -9,15 +9,14 @@
 		<meta name="keywords" content="{keywords}" />
 		<meta name="description" content="{description}" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="{theme}bootstrap.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		
 		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-		<link href="/plugin/froala_editor_1.2.8/css/froala_editor.min.css" rel="stylesheet" type="text/css">
-		<link href="/plugin/froala_editor_1.2.8/css/froala_style.min.css" rel="stylesheet" type="text/css">
 		
+		<link href="/plugin/summernote/summernote.css" rel="stylesheet">
 
 		<link href="/styles.css" rel="stylesheet">
 		
@@ -78,7 +77,7 @@
 </div>
 
 
-<div class="container-fluid">
+<div class="container-fluid" style="max-width: 1600px">
   
   <!--left-->
   <div class="col-sm-2">
@@ -105,6 +104,7 @@
 <!--  <hr> -->
 </div><!--/container-fluid-->
 
+
 	<footer class="footer">
       <div class="container">
         <p class="text-muted" align="center">Движок сайта cjCms, 2015</p>
@@ -118,26 +118,17 @@
 		<script src="/js/others.js"></script>
 		<script src="/js/builderEdit.js"></script>
 
-		
-		<script src="/plugin/froala_editor_1.2.8/js/froala_editor.min.js"></script>
-		<!--[if lt IE 9]>
-		<script src="/plugin/froala_editor_1.2.8/js/froala_editor_ie8.min.js"></script>
-		<![endif]-->
-		<script src="/plugin/froala_editor_1.2.8/js/plugins/tables.min.js"></script>
-		<script src="/plugin/froala_editor_1.2.8/js/plugins/lists.min.js"></script>
-		<script src="/plugin/froala_editor_1.2.8/js/plugins/colors.min.js"></script>
-		<script src="/plugin/froala_editor_1.2.8/js/plugins/media_manager.min.js"></script>
-		<script src="/plugin/froala_editor_1.2.8/js/plugins/font_family.min.js"></script>
-		<script src="/plugin/froala_editor_1.2.8/js/plugins/font_size.min.js"></script>
-		<script src="/plugin/froala_editor_1.2.8/js/plugins/block_styles.min.js"></script>
-		<script src="/plugin/froala_editor_1.2.8/js/plugins/video.min.js"></script>
-		
+		<script src="/plugin/summernote/summernote.min.js"></script>
 <script>
-	$(function() {
-		$('#sitev_ru_froala_edit').editable({
-			inlineMode: false
-		})
+	$(document).ready(function() {
+		$('#sitev_ru_summernote').summernote({
+			height: 300,
+			minHeight: 100,             // set minimum height of editor
+			maxHeight: 200,             // set maximum height of editor
+			focus: true
+		});
 	});
+	
 </script>		
 		
 <!-- Yandex.Metrika counter -->
