@@ -1,0 +1,180 @@
+	<br>
+	<div class="form-group">
+		<div class="col-sm-12">
+			<table id="tabWidgets" class="table table-striped table-bordered">
+				<thead>
+				<tr><th>№</th><th>Местоположение</th><th>Тип виджета</th><th>Название</th><th>Описание</th></tr>
+				</thead>
+				{widgets}
+			</table>
+			<div class="form-inline">
+				<input type="button" class="form-control btn-primary" id="btnAddWidget" value="Добавить" data-toggle="modal" data-target="#modAddWidget">
+				<input type="button" class="form-control" id="btnEditWidget" value="Параметры" data-toggle="modal" data-target="#modEditWidget" data-table="tabWidgets" disabled>
+				<input type="button" class="form-control" id="btnEditWidgetContent" value="Контент" data-table="tabWidgets" disabled>
+				<input type="button" class="form-control btn-danger" id="btnDelete" value="Удалить" data-toggle="modal" data-target="#modDeleteWidget" data-table="tabWidgets" disabled>
+				&nbsp;&nbsp;&nbsp;
+				<button id="btnBottom" class="btn btn-default" type="submit" disabled><i class="glyphicon glyphicon-triangle-bottom"></i></button>
+				<button id="btnTop" class="btn btn-default" type="submit" disabled><i class="glyphicon glyphicon-triangle-top"></i></button>
+			</div>
+			<br>
+		</div>
+	</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modAddWidget" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Добавить виджет</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="widgetType" class="col-sm-3 control-label">Тип виджета</label>
+						<div class="col-sm-9">
+							<select id="widgetType" name="moduleId" class="form-control">
+								<option></option>
+								{types}
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="location" class="col-sm-3 control-label">Местоположение</label>
+						<div class="col-sm-9">
+							<select id="location" name="moduleId" class="form-control">
+								<option></option>
+								<option value="sidebar">sidebar</option>
+								<option value="sidebar-additional">sidebar-additional</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtName" class="col-sm-3 control-label">Название></label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtName">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtAbout" class="col-sm-3 control-label">Описание</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtAbout">
+						</div>
+					</div>
+
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="btnAddWidgetFinish" class="btn btn-primary" data-dismiss="modal">Добавить</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modEditWidget" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<input type="hidden" id="hidWidgetIndex" value="">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Правка виджета</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="selEditLocation" class="col-sm-3 control-label">Местоположение</label>
+						<div class="col-sm-9">
+							<select id="selEditLocation" name="moduleId" class="form-control">
+								<option></option>
+								<option value="sidebar">sidebar</option>
+								<option value="sidebar-additional">sidebar-additional</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="selEditType" class="col-sm-3 control-label">Тип виджета</label>
+						<div class="col-sm-9">
+							<select id="selEditType" name="selEditType" class="form-control">
+								<option></option>
+								{types}
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="edtEditName" class="col-sm-3 control-label">Название<br><small>(title)</small></label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtEditName">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtEditAbout" class="col-sm-3 control-label">Описание<br><small>(description)</small></label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtEditAbout">
+						</div>
+					</div>
+
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="btnEditWidgetFinish" class="btn btn-primary" data-dismiss="modal">Применить</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modDeleteWidget" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Удаление виджета</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<input type="hidden" id="hidRemovePageId">
+					<input type="hidden" id="hidRemoveIndex">
+					<div class="form-group">
+						<label for="edtDeleteWidgetType" class="col-sm-3 control-label">Тип виджета</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtDeleteWidgetType" readonly>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtDeleteLocation" class="col-sm-3 control-label">Местоположение</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtDeleteLocation" readonly>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="edtDeleteName" class="col-sm-3 control-label">Название</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtDeleteName" readonly>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtDeleteAbout" class="col-sm-3 control-label">Описание</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtDeleteAbout">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+				<button type="button" id="btnDeleteWidgetFinish" class="btn btn-danger" data-dismiss="modal">Удалить</button>
+			</div>
+		</div>
+	</div>
+</div>
+	

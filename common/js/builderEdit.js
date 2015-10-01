@@ -12,12 +12,7 @@ $(document).ready(function() {
 		$("#btnTop").prop("disabled", false);
 
 		var index = $("#tabPages tbody tr.info").index();
-		/*
-		var tr1 = $("#tabPages tbody tr.info");
-		var tr2 = $("#tabPages tbody tr").eq(index - 1);
-		//tr1.detach();
-		tr1.insertBefore(tr2);
-		*/
+		
 		var module = $("#tabPages tbody tr").eq(index).find('td').eq(2).text();
 		if (module == "Просто текст") $("#btnEditContent").prop("disabled", false);
 		else $("#btnEditContent").prop("disabled", true);
@@ -36,6 +31,12 @@ $(document).ready(function() {
 	$("#tabWidgets").click(function() {
 		$("#btnEditWidget").prop("disabled", false);
 		$("#btnDeleteWidget").prop("disabled", false);
+		var index = $("#tabWidgets tbody tr.info").index();
+		
+		var type = $("#tabWidgets tbody tr").eq(index).find('td').eq(2).text();
+		alert(type);
+		if (type == "Просто текст") $("#btnEditContent").prop("disabled", false);
+		else $("#btnEditWidgetContent").prop("disabled", true);
 	});
 	
 	$("#btnCreate").click(function() {
@@ -739,6 +740,82 @@ alert(text);
 				});
 			}
 		});
+	});
+	
+	$("#btnAddWidgetFinish").click(function() {
+		var siteId = $("#hidSiteId").val();
+		var type = $("#widgetType").val();
+		var location = $("#location").val();
+		var name = $("#edtName").val();
+		var about = $("#edtAbout").val();
+		
+		$.ajax({
+			global: false,
+			type: "POST",
+			url: "/builder/addWidget?cmd=ajax",
+			cache: false,
+			data: ({siteId: siteId, type: type, location: location, name: name, about: about}),
+			dataType: "xml", 
+			success: function(xml) {
+				$(xml).find("note").each(function() {
+					var result = $(this).find("result").text();
+					if (result == "1") {
+						var index = $(this).find("index").text();
+						var moduleName = $(this).find("moduleName").text();
+						window.location.assign("/builder/edit/" + siteId + "/widgets");
+					}
+				});
+			}
+		});
+	});
+	
+	$("#btnEditWidget").click(function() {
+		var siteId = $("#hidSiteId").val();
+		
+		var elem = $("#" + this.id);
+		var table = elem.data('table');
+		var index = $("#" + table + " tbody tr.info").index();
+		$("#hidWidgetIndex").val(index);
+		
+	
+		var location = $("#" + table + " tbody tr").eq(index).find('td').eq(1).text();
+		var type = $("#" + table + " tbody tr").eq(index).find('td').eq(2).text();
+		var name = $("#" + table + " tbody tr").eq(index).find('td').eq(3).text();
+		var about = $("#" + table + " tbody tr").eq(index).find('td').eq(4).text();
+		
+		$("#selEditLocation option[value='" + location + "']").attr('selected', 'true');
+		$("#selEditType option:contains('" + type + "')").attr('selected', 'true');
+		
+		$("#edtEditName").val(name);
+		$("#edtEditAbout").val(about);
+	});
+	
+	$("#btnEditWidgetFinish").click(function() {
+		var siteId = $("#hidSiteId").val();
+		var widgetIndex = $("#hidWidgetIndex").val();
+		
+		var location = $("#selEditLocation").val();
+		var type = $("#selEditType").val();
+		var name = $("#edtEditName").val();
+		var about = $("#edtEditAbout").val();
+
+		$.ajax({
+			global: false,
+			type: "POST",
+			url: "/builder/editWidget?cmd=ajax",
+			cache: false,
+			data: ({siteId: siteId, widgetIndex: widgetIndex, type: type, location: location, name: name, about: about}),
+			dataType: "xml", 
+			success: function(xml) {
+				$(xml).find("note").each(function() {
+					var result = $(this).find("result").text();
+					if (result == "1") {
+						window.location.assign("/builder/edit/" + siteId + "/widgets");
+					}
+				});
+			}
+		});
+		
 	});
 
 	$('table tbody tr').on('click', function() {

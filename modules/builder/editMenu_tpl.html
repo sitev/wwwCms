@@ -1,0 +1,171 @@
+	<br>
+	<input type="hidden" id="hidMenuItemIndex">
+	
+	<div class="form-group">
+		<div class="col-sm-12">
+			<table id="tabMenu" class="table sitev_ru_treegrid table-striped table-bordered">
+				<thead>
+				<tr><th>Пункт меню</th><th>URL меню</th></tr>
+				</thead>
+				{items}
+			</table>
+			
+			<div class="form-inline">
+				<input type="button" class="form-control btn-primary" id="btnAdd" value="Добавить" data-toggle="modal" data-target="#modAddItem">
+				<input type="button" class="form-control btn-primary" id="btnAddChild" value="Добавить дочерний" data-toggle="modal" data-target="#modAddChildItem" data-table="tabMenu" disabled>
+				<input type="button" class="form-control" id="btnEditItem" value="Правка" data-toggle="modal" data-target="#modEditItem" data-table="tabMenu" disabled>
+				<input type="button" class="form-control btn-danger" id="btnDeleteItem" value="Удалить" data-toggle="modal" data-target="#modDeleteItem" data-table="tabMenu" disabled>
+				&nbsp;&nbsp;&nbsp;
+				<button id="btnBottomItem" class="btn btn-default" type="submit" disabled><i class="glyphicon glyphicon-triangle-bottom"></i></button>
+				<button id="btnTopItem" class="btn btn-default" type="submit" disabled><i class="glyphicon glyphicon-triangle-top"></i></button>
+			</div>
+			<br>
+		</div>
+	</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modAddItem" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Добавить элемент меню</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+
+					<div class="form-group">
+						<label for="edtName" class="col-sm-3 control-label">Пункт меню</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtName">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtURL" class="col-sm-3 control-label">URL меню</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtURL">
+						</div>
+					</div>
+
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="btnAddItem" class="btn btn-primary" data-dismiss="modal">Добавить</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modAddChildItem" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Добавить дочерний элемент меню</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+
+					<div class="form-group">
+						<label for="edtParentName" class="col-sm-3 control-label">Родительский пункт меню</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtParentName" disabled>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtChildName" class="col-sm-3 control-label">Пункт меню</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtChildName">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtChildURL" class="col-sm-3 control-label">URL меню</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtChildURL">
+						</div>
+					</div>
+
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="btnAddChildItem" class="btn btn-primary" data-dismiss="modal">Добавить</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modEditItem" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<input type="hidden" id="hidPageIndex" value="">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Правка пункта меню</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="edtEditItemName" class="col-sm-3 control-label">Пункт меню</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtEditItemName">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="edtEditItemURL" class="col-sm-3 control-label">URL меню</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtEditItemURL">
+						</div>
+					</div>
+
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="btnEditItemFinish" class="btn btn-primary" data-dismiss="modal">Применить</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modDeleteItem" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Удаление пункта меню</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<input type="hidden" id="hidRemovePageId">
+					<input type="hidden" id="hidRemoveIndex">
+					
+					<div class="form-group">
+						<label for="edtDeleteItemName" class="col-sm-3 control-label">Название пункта меню</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtDeleteItemName" readonly>
+						</div>
+					</div>
+
+					
+					<div class="form-group">
+						<label for="edtDeleteItemURL" class="col-sm-3 control-label">URL пункта меню</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="edtDeleteItemURL" readonly>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+				<button type="button" id="btnDeleteItemFinish" class="btn btn-danger" data-dismiss="modal">Удалить</button>
+			</div>
+		</div>
+	</div>
+</div>
+	
