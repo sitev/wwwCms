@@ -11,10 +11,10 @@
 				<input type="button" class="form-control btn-primary" id="btnAddWidget" value="Добавить" data-toggle="modal" data-target="#modAddWidget">
 				<input type="button" class="form-control" id="btnEditWidget" value="Параметры" data-toggle="modal" data-target="#modEditWidget" data-table="tabWidgets" disabled>
 				<input type="button" class="form-control" id="btnEditWidgetContent" value="Контент" data-table="tabWidgets" disabled>
-				<input type="button" class="form-control btn-danger" id="btnDelete" value="Удалить" data-toggle="modal" data-target="#modDeleteWidget" data-table="tabWidgets" disabled>
+				<input type="button" class="form-control btn-danger" id="btnDeleteWidget" value="Удалить" data-toggle="modal" data-target="#modDeleteWidget" data-table="tabWidgets" disabled>
 				&nbsp;&nbsp;&nbsp;
-				<button id="btnBottom" class="btn btn-default" type="submit" disabled><i class="glyphicon glyphicon-triangle-bottom"></i></button>
-				<button id="btnTop" class="btn btn-default" type="submit" disabled><i class="glyphicon glyphicon-triangle-top"></i></button>
+				<button id="btnBottomWidget" class="btn btn-default" type="submit" disabled><i class="glyphicon glyphicon-triangle-bottom"></i></button>
+				<button id="btnTopWidget" class="btn btn-default" type="submit" disabled><i class="glyphicon glyphicon-triangle-top"></i></button>
 			</div>
 			<br>
 		</div>
@@ -46,7 +46,7 @@
 							<select id="location" name="moduleId" class="form-control">
 								<option></option>
 								<option value="sidebar">sidebar</option>
-								<option value="sidebar-additional">sidebar-additional</option>
+								<option value="sidebar-additional">sidebar2</option>
 							</select>
 						</div>
 					</div>
@@ -149,23 +149,23 @@
 					</div>
 
 					<div class="form-group">
-						<label for="edtDeleteLocation" class="col-sm-3 control-label">Местоположение</label>
+						<label for="edtDeleteWidgetLocation" class="col-sm-3 control-label">Местоположение</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="edtDeleteLocation" readonly>
+							<input type="text" class="form-control" id="edtDeleteWidgetLocation" readonly>
 						</div>
 					</div>
 					
 					<div class="form-group">
-						<label for="edtDeleteName" class="col-sm-3 control-label">Название</label>
+						<label for="edtDeleteWidgetName" class="col-sm-3 control-label">Название</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="edtDeleteName" readonly>
+							<input type="text" class="form-control" id="edtDeleteWidgetName" readonly>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="edtDeleteAbout" class="col-sm-3 control-label">Описание</label>
+						<label for="edtDeleteWidgetAbout" class="col-sm-3 control-label">Описание</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="edtDeleteAbout">
+							<input type="text" class="form-control" id="edtDeleteWidgetAbout" readonly>
 						</div>
 					</div>
 				</form>
