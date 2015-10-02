@@ -195,7 +195,7 @@ $(document).ready(function() {
 					var result = $(this).find("result").text();
 					if (result == "1") {
 						location.reload();
-						alert(111);
+						//alert(111);
 					}
 				});
 			}
@@ -209,11 +209,11 @@ $(document).ready(function() {
 		var moduleId = $("#moduleId").val();
 		var isMainPage = $("#cbxMainPage").val();
 		if (isMainPage == "on") isMainPage = "1"; else isMainPage = "0";
-		alert(isMainPage);
+		//alert(isMainPage);
 		var title = $("#edtTitle").val();
 		var description = $("#edtDescription").val();
 		var keywords = $("#edtKeywords2").val();
-		alert(keywords);
+		//alert(keywords);
 		
 		$.ajax({
 			global: false,
@@ -230,7 +230,7 @@ $(document).ready(function() {
 						var moduleName = $(this).find("moduleName").text();
 						window.location.assign("/builder/edit/" + siteId + "/pages");
 						/*
-						alert(222);
+						//alert(222);
 						$("#tabPages").append("<tr><td>" + index + "</td><td>" + url + "</td><td>" + moduleName + "</td><td>" + isMainPage + "</td><td>" + 
 							title + "</td><td>" + description + "</td><td>" + keywords + "</td><td><a href='#' data-toggle='modal' data-target='#modRemovePage' data-pageid='" + 
 							pageId + "' data-url='" + url + "' data-title='" + title + "'><i class='glyphicon glyphicon-remove'></i></a></td></tr>");
@@ -270,7 +270,7 @@ $(document).ready(function() {
 		
 		var elem = $("#" + this.id);
 		var table = elem.data('table');
-		alert(table);
+		//alert(table);
 		var index = $("#" + table + " tbody tr.info").index();
 		$("#hidPageIndex").val(index);
 		
@@ -297,7 +297,7 @@ $(document).ready(function() {
 		var table = elem.data('table');
 		var pageIndex = $("#" + table + " tbody tr.info").index();
 		
-		alert(location.href);
+		//alert(location.href);
 
 		$.ajax({
 			global: false,
@@ -311,7 +311,7 @@ $(document).ready(function() {
 					var result = $(this).find("result").text();
 					if (result == "1") {
 						var pageId = $(this).find("pageId").text();
-						alert(pageId);
+						//alert(pageId);
 						location.assign("/builder/editContent/" + siteId + "/" + pageId);
 					}
 				});
@@ -378,13 +378,13 @@ $(document).ready(function() {
 	
 	$("#btnSaveContent").click(function() {
 		var text = $("#sitev_ru_summernote").code();
-alert(text);
+//alert(text);
 		var elem = $("#" + this.id);
 		var siteId = elem.data('siteid');
 		var pageId = elem.data('pageid');
 		
-		alert(siteId);
-		alert(pageId);
+		//alert(siteId);
+		//alert(pageId);
 		
 		$.ajax({
 			global: false,
@@ -394,9 +394,9 @@ alert(text);
 			data: ({siteId: siteId, pageId: pageId, text: text}),
 			dataType: "xml", 
 			success: function(xml) {
-				alert(1);
+				//alert(1);
 				$(xml).find("note").each(function() {
-					alert(2);
+					//alert(2);
 					var result = $(this).find("result").text();
 					if (result == "1") {
 						location.assign("/builder/edit/" + siteId + "/pages");
@@ -561,12 +561,12 @@ alert(text);
 			data: ({siteId: siteId, name: name, url: url}),
 			dataType: "xml", 
 			success: function(xml) {
-				alert(1);
+				//alert(1);
 				$(xml).find("note").each(function() {
-					alert(2);
+					//alert(2);
 					var result = $(this).find("result").text();
 					if (result == "1") {
-						alert(3);
+						//alert(3);
 						window.location.assign("/builder/edit/" + siteId + "/menu");
 					}
 				});
@@ -589,12 +589,12 @@ alert(text);
 			data: ({siteId: siteId, itemIndex: itemIndex, name: name, url: url}),
 			dataType: "xml", 
 			success: function(xml) {
-				alert(1);
+				//alert(1);
 				$(xml).find("note").each(function() {
-					alert(2);
+					//alert(2);
 					var result = $(this).find("result").text();
 					if (result == "1") {
-						alert(3);
+						//alert(3);
 						window.location.assign("/builder/edit/" + siteId + "/menu");
 					}
 				});
@@ -610,7 +610,7 @@ alert(text);
 		var index = $("#" + table + " tbody tr.info").index();
 		$("#hidMenuItemIndex").val(index);
 		
-		alert(index);
+		//alert(index);
 		
 		var name = $("#" + table + " tbody tr").eq(index).find('td').eq(0).text();
 		var url = $("#" + table + " tbody tr").eq(index).find('td').eq(1).text();
@@ -633,12 +633,12 @@ alert(text);
 			data: ({siteId: siteId, itemIndex: itemIndex, name: name, url: url}),
 			dataType: "xml", 
 			success: function(xml) {
-				alert(1);
+				//alert(1);
 				$(xml).find("note").each(function() {
-					alert(2);
+					//alert(2);
 					var result = $(this).find("result").text();
 					if (result == "1") {
-						alert(3);
+						//alert(3);
 						window.location.assign("/builder/edit/" + siteId + "/menu");
 					}
 				});
@@ -655,7 +655,7 @@ alert(text);
 		var index = $("#" + table + " tbody tr.info").index();
 		$("#hidMenuItemIndex").val(index);
 		
-		alert(index);
+		//alert(index);
 		
 		var name = $("#" + table + " tbody tr").eq(index).find('td').eq(0).text();
 		var url = $("#" + table + " tbody tr").eq(index).find('td').eq(1).text();
@@ -676,12 +676,12 @@ alert(text);
 			data: ({siteId: siteId, itemIndex: itemIndex}),
 			dataType: "xml", 
 			success: function(xml) {
-				alert(1);
+				//alert(1);
 				$(xml).find("note").each(function() {
-					alert(2);
+					//alert(2);
 					var result = $(this).find("result").text();
 					if (result == "1") {
-						alert(3);
+						//alert(3);
 						window.location.assign("/builder/edit/" + siteId + "/menu");
 					}
 				});
@@ -749,7 +749,7 @@ alert(text);
 		var siteId = $("#hidSiteId").val();
 		var type = $("#widgetType").val();
 		var location = $("#location").val();
-		alert(location);
+		//alert(location);
 		var name = $("#edtName").val();
 		var about = $("#edtAbout").val();
 		
@@ -828,7 +828,7 @@ alert(text);
 		var table = elem.data('table');
 		var widgetIndex = $("#" + table + " tbody tr.info").index();
 		
-		alert(location.href);
+		//alert(location.href);
 
 		$.ajax({
 			global: false,
@@ -855,8 +855,8 @@ alert(text);
 		var siteId = elem.data('siteid');
 		var widgetId = elem.data('widgetid');
 		
-		alert(siteId);
-		alert(widgetId);
+		//alert(siteId);
+		//alert(widgetId);
 		
 		$.ajax({
 			global: false,
@@ -866,12 +866,12 @@ alert(text);
 			data: ({siteId: siteId, widgetId: widgetId, text: text}),
 			dataType: "xml", 
 			success: function(xml) {
-				alert(111);
+				//alert(111);
 				$(xml).find("note").each(function() {
-					alert(2);
+					//alert(2);
 					var result = $(this).find("result").text();
 					if (result == "1") {
-						alert(3);
+						//alert(3);
 						location.assign("/builder/edit/" + siteId + "/widgets");
 					}
 				});
