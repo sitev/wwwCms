@@ -749,6 +749,7 @@ alert(text);
 		var siteId = $("#hidSiteId").val();
 		var type = $("#widgetType").val();
 		var location = $("#location").val();
+		alert(location);
 		var name = $("#edtName").val();
 		var about = $("#edtAbout").val();
 		
